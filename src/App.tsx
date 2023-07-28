@@ -1,32 +1,30 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <Grid
-      templateAreas={{
-        base: `"nav" "main"`,
-        lg: `"nav nav" "aside main"`,
-      }}
-    >
-      <GridItem area={"nav"} bg={"coral"}>
-        Nav
-      </GridItem>
-      <Show above="lg">
-        <GridItem area={"nav"} bg={"cyan"}>
+    <>
+      <Grid
+        templateAreas={{
+          base: `"nav" "main"`,
+          lg: `"nav nav" "aside main"`,
+        }}
+      >
+        <GridItem area={"nav"} bg={"coral"}>
           Nav
         </GridItem>
-      </Show>
 
-      <Show above="lg">
-        <GridItem area={"aside"} bg={"gold"}>
-          Aside
+        <Show above="lg">
+          <GridItem area={"aside"} bg={"gold"}>
+            Aside
+          </GridItem>
+        </Show>
+
+        <GridItem area={"main"} bg={"dodgerblue"}>
+          Main
         </GridItem>
-      </Show>
-
-      <GridItem area={"main"} bg={"dodgerblue"}>
-        Main
-      </GridItem>
-    </Grid>
+      </Grid>
+    </>
   );
 }
 
