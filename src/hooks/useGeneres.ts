@@ -6,6 +6,6 @@ export interface Genre {
   }
   
 
-const useGenres = () => useData<Genre>("/games");
+const useGenres = () => useData<Genre>("/genres");
 
 export default useGenres;
