@@ -23,8 +23,8 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
       <List>
         {skeletons.map((skeleton) => {
           return (
-            <ListItem key={skeleton} paddingY="8px">
-              <Skeleton height="32px" key={skeleton} />
+            <ListItem key={skeleton} paddingY={2}>
+              <Skeleton height={8} key={skeleton} />
             </ListItem>
           );
         })}
@@ -35,10 +35,10 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
     <List>
       {data.map((genre) => {
         return (
-          <ListItem key={genre.id} paddingY="8px">
+          <ListItem key={genre.id} paddingY={2}>
             <HStack>
               <Image
-                boxSize="32px"
+                boxSize={8}
                 borderRadius={8}
                 src={getCroppedImageUrl(genre.image_background)}
               />
