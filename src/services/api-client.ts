@@ -1,7 +1,8 @@
 import axios, { AxiosRequestConfig } from "axios";
 
-interface FetchResponse<T> {
+export interface FetchResponse<T> {
     count: number;
+    next: string | null;
     results: T[];
   }
 
@@ -17,7 +18,7 @@ class ApiClient<T> {
     constructor(endpoint: string) {
         this.endpoint = endpoint;
     }
-    getAll = (config?: AxiosRequestConfig) => clientInstance.get<FetchResponse<T>>(this.endpoint, config).then(res => res.data.results);
+    getAll = (config?: AxiosRequestConfig) => clientInstance.get<FetchResponse<T>>(this.endpoint, config).then(res => res.data);
 }
 
 export default ApiClient;
