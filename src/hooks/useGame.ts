@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Game } from "./useGames";
-import axios from "axios";
+import { Game } from "../entities/Game";
 import ApiClient from "../services/api-client";
 
 
