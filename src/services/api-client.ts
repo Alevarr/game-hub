@@ -19,6 +19,7 @@ class ApiClient<T> {
         this.endpoint = endpoint;
     }
     getAll = (config?: AxiosRequestConfig) => clientInstance.get<FetchResponse<T>>(this.endpoint, config).then(res => res.data);
+    getSingle = (config?: AxiosRequestConfig) => clientInstance.get<T>(this.endpoint, config).then(res => res.data);
 }
 
 export default ApiClient;
