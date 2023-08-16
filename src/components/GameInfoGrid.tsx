@@ -14,7 +14,7 @@ const GameInfoGrid = ({ data }: Props) => {
         {
           <>
             {data.parent_platforms.map(({ platform }) => (
-              <Text>{platform.name}</Text>
+              <Text key={platform.id}>{platform.name}</Text>
             ))}
           </>
         }
@@ -25,14 +25,14 @@ const GameInfoGrid = ({ data }: Props) => {
       <InfoCell heading="Genres">
         <>
           {data.genres.map((genre) => (
-            <Text>{genre.name}</Text>
+            <Text key={genre.id}>{genre.name}</Text>
           ))}
         </>
       </InfoCell>
       <InfoCell heading="Publishers">
         <>
           {data.publishers.map((publisher) => (
-            <Text>{publisher.name}</Text>
+            <Text key={publisher.id}>{publisher.name}</Text>
           ))}
         </>
       </InfoCell>
