@@ -7,13 +7,15 @@ interface Props {
 const ExpandableText = ({ children }: Props) => {
   if (!children) return null;
   const maxChars = 300;
+  const expandFeatureNeeded = children.length > maxChars;
   const [isExpanded, setIsExpanded] = useState(false);
+  const cutString = children.substring(0, maxChars) + "...";
 
   return (
     <>
       <Text>
-        {isExpanded ? children : children.substring(0, maxChars) + "..."}{" "}
-        {children.length > maxChars && (
+        {expandFeatureNeeded ? (isExpanded ? children : cutString) : children}{" "}
+        {expandFeatureNeeded && (
           <Button
             onClick={() => setIsExpanded(!isExpanded)}
             size="xs"
